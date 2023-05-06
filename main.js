@@ -11,3 +11,29 @@ function toggleDetail(e) {
     const detail = $(item).children(".about-exp-item-detail")
     $(detail).slideToggle()
 }
+
+function onFormSubmit(e){
+    e.preventsDefault()
+    const email = $("#inp_email")
+    const subject = $("#inp_subject")
+    const message = $("#inp_message")
+
+    if(!$(email).val()){
+        alert("Email is required")
+    }
+
+    else if(!$(subject).val()){
+        alert("Subject is required")
+    }
+
+    else if(!$(message)){
+        alert("message is requeired")
+    }
+
+    else{
+        $(email).val("")
+        $(subject).val("")
+        $(message).val("")
+        alert("Form submitted")
+    }
+}
